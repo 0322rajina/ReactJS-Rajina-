@@ -45,16 +45,16 @@ const getProductNumber = () => {
         customerResponse.data.forEach((customer) => {
             customer.bought.map((item) => {
                 {
-                    // if (productNumber[item.name]) {
-                    //     productNumber[item.name] += 1;
-                    // } else {
-                    //     productNumber[item.name] = 1;
-                    // }
-                    if (productNumber[item.id]){
-                        productNumber[item.id]+=1;
-                    }else{
-                        productNumber[item.id]=1;
+                    if (!productNumber[item.name]) {
+                        productNumber[item.name] = 1;
+                    } else {
+                        productNumber[item.name] += 1;
                     }
+                    // if (productNumber[item.id]){
+                    //     productNumber[item.id]+=1;
+                    // }else{
+                    //     productNumber[item.id]=1;
+                    // }
                 }
             });
         });
